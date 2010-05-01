@@ -6,8 +6,8 @@ class Rats < Formula
   md5 '339ebe60fc61789808a457f6f967d226'
 
   def install
-    # Have to set man path to install to "$PREFIX/share/man" directory.
-    system "./configure", "--disable-debug", "--disable-dependency-tracking", "--prefix=#{prefix}", "--mandir=#{prefix}/share/man"
+    system "./configure", "--disable-debug", "--disable-dependency-tracking",
+                          "--prefix=#{prefix}", "--mandir=#{man}"
     system "make install"
   end
 end
