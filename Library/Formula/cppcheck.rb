@@ -9,7 +9,7 @@ class Cppcheck < Formula
     # Binary install dir defaults to "${DESTDIR}/usr/bin", need to change to fix this.
     bin = "#{prefix}/bin"
     # Need to remove "-Wlogical-op" from c++ flags.
-    cxxflags = "-Wall -Wextra -pedantic -Wfloat-equal -Wcast-qual -g -D_GLIBCXX_DEBUG"
+    cxxflags = "-Wall -Wextra -pedantic -Wfloat-equal -Wcast-qual -O2 -DNDEBUG"
 
     # Pass to make variables.
     system "make BIN=\"" + bin + "\" CXXFLAGS=\"" + cxxflags + "\" install"
